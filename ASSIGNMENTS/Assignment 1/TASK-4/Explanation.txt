@@ -1,0 +1,30 @@
+# TASK 4 – USING NAMED CONSTANTS
+
+## Objective
+To use named constants for the fixed values in the milk co-operative payment calculator.
+
+## Explanation
+Named constants represent values that are intended to remain unchanged throughout program execution. In Python, uppercase names are commonly used to identify constants.
+
+## Constants Used
+- BASE_RATE = ₹30.00
+- STANDARD_FAT = 3.5%
+- STANDARD_SNF = 8.5%
+- FAT_ADJUSTMENT = ₹0.40 per 0.1% difference
+- SNF_ADJUSTMENT = ₹0.30 per 0.1% difference
+- FAT_STEP = 0.1%
+- SNF_STEP = 0.1%
+
+## Advantages
+1. Improves code readability.
+2. Avoids repeating the same values.
+3. Makes updating rates easier.
+4. Reduces mistakes caused by inconsistent values.
+
+## Sample Result
+For 10 litres of milk with 3.7% fat and 8.6% SNF:
+- Rate per litre = ₹31.10
+- Total payment = ₹311.00
+
+## Conclusion
+Named constants make the program easier to understand, maintain, and update. Decimal is used for the financial values to reduce floating-point precision issues.
