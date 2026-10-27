@@ -1,0 +1,42 @@
+# TASK 1 – ANALYSIS OF MILK PAYMENT CALCULATOR
+
+## 1. Objective
+To analyse the requirements of a payment calculator for a village milk co-operative.
+
+## 2. Problem Description
+The village milk co-operative collects milk from farmers during morning and evening shifts. The system records the farmer's ID, milk quantity, fat percentage, SNF percentage, and shift. These details will be used to validate the entry and calculate the farmer's payment.
+
+## 3. Input Details
+1. Farmer ID
+2. Milk quantity in litres
+3. Fat percentage
+4. SNF (Solids-Not-Fat) percentage
+5. Shift (Morning or Evening)
+
+## 4. Data Types
+- Farmer ID – String
+- Milk quantity – Decimal
+- Fat percentage – Decimal
+- SNF percentage – Decimal
+- Shift – String
+- Milk rate – Decimal
+
+## 5. Named Constants
+- Base rate = ₹30.00 per litre
+- Standard fat = 3.5%
+- Standard SNF = 8.5%
+- Minimum fat = 2.0%
+- Maximum fat = 7.0%
+
+## 6. Validation Rules
+- Farmer ID must not be empty.
+- Milk quantity must be greater than zero.
+- Fat percentage must be between 2.0% and 7.0%, inclusive.
+- SNF percentage must be greater than zero.
+- Shift must be Morning or Evening.
+
+## 7. Expected Output
+The program displays the farmer's details, base rate, and whether the entered record is valid.
+
+## 8. Conclusion
+This analysis identifies the inputs, data types, constants, and validation rules required for the milk payment calculator. These requirements form the foundation for implementing and testing the program in Python.
