@@ -1,0 +1,25 @@
+# TASK 6 – FUNCTIONS IN PYTHON
+
+## Objective
+To divide the milk payment calculator into reusable functions.
+
+## Functions Used
+
+1. **validate_entry()** – Checks whether the farmer details satisfy the validation rules.
+2. **calculate_rate()** – Calculates the milk rate using fat and SNF adjustments.
+3. **calculate_payment()** – Multiplies the milk quantity by the calculated rate.
+
+## Advantages of Functions
+- Reduce repeated code.
+- Improve readability.
+- Make testing and debugging easier.
+- Allow individual operations to be reused.
+- Make the program easier to maintain.
+
+## Sample Result
+For farmer F001 supplying 10 litres with 3.7% fat and 8.6% SNF:
+- Rate per litre = ₹31.10
+- Total payment = ₹311.00
+
+## Conclusion
+Functions divide the program into smaller units, making the milk payment calculator easier to understand, test, and maintain.
