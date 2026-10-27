@@ -1,0 +1,22 @@
+# TASK 3 – DECIMAL FOR ACCURATE MONEY CALCULATIONS
+
+## Objective
+To demonstrate the importance of using Python's Decimal type for financial calculations in a milk co-operative payment system.
+
+## Problem with Float
+Floating-point numbers may produce small precision errors. For example, adding 0.1 and 0.2 using float can produce 0.30000000000000004 instead of exactly 0.3.
+
+## Use of Decimal
+The Decimal class from Python's decimal module supports decimal arithmetic suitable for financial calculations. Values are created from strings, such as Decimal("30.00").
+
+## Application
+The program uses Decimal for the base rate, milk quantity, fat percentage, SNF percentage, adjustments, rate per litre, and total payment.
+
+## Sample Result
+- Fat adjustment: ₹0.80
+- SNF adjustment: ₹0.30
+- Rate per litre: ₹31.10
+- Total payment: ₹311.00
+
+## Conclusion
+Using Decimal helps avoid common binary floating-point representation issues in financial calculations. Appropriate rounding to the required currency precision should also be applied when finalising payments.
