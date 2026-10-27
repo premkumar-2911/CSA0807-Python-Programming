@@ -1,0 +1,28 @@
+# TASK 2 – MILK PAYMENT CALCULATION
+
+## Objective
+To calculate the payment for milk supplied by a farmer based on milk quantity, fat percentage, and SNF percentage.
+
+## Formula
+Fat adjustment = ((Fat percentage − 3.5) / 0.1) × ₹0.40
+
+SNF adjustment = ((SNF percentage − 8.5) / 0.1) × ₹0.30
+
+Rate per litre = ₹30.00 + Fat adjustment + SNF adjustment
+
+Total payment = Milk quantity × Rate per litre
+
+## Sample Input
+Farmer ID: F001  
+Milk quantity: 10 litres  
+Fat percentage: 3.7%  
+SNF percentage: 8.6%
+
+## Expected Calculation
+Fat adjustment = ₹0.80  
+SNF adjustment = ₹0.30  
+Rate per litre = ₹31.10  
+Total payment = ₹311.00
+
+## Conclusion
+The program calculates the milk rate using fat and SNF adjustments and multiplies the resulting rate by the quantity of milk supplied.
