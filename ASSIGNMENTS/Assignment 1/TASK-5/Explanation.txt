@@ -1,0 +1,21 @@
+# TASK 5 – INPUT VALIDATION
+
+## Objective
+To validate farmer details before accepting a milk delivery record.
+
+## Validation Rules
+1. Farmer ID must not be empty.
+2. Milk quantity must be greater than zero.
+3. Fat percentage must be between 2.0% and 7.0%, inclusive.
+4. SNF percentage must be greater than zero.
+5. Shift must be Morning or Evening.
+6. Quantity, fat, and SNF must contain valid finite numeric values.
+
+## Implementation
+The program uses conditional statements to check the inputs. The Decimal class is used for numeric values, and InvalidOperation is handled when an input cannot be converted to Decimal.
+
+## Testing
+A valid entry is accepted. Invalid quantities, out-of-range fat percentages, non-positive SNF values, invalid shifts, empty IDs, and non-numeric inputs are rejected with appropriate messages.
+
+## Conclusion
+Input validation improves data quality and prevents invalid farmer records from being accepted by the payment calculator.
