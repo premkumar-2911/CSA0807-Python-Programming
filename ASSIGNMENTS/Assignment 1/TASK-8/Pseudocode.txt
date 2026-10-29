@@ -1,0 +1,30 @@
+
+BEGIN
+
+    INPUT farmer_id
+    INPUT litres
+    INPUT fat
+    INPUT snf
+
+    IF farmer_id is empty OR inputs are invalid THEN
+        DISPLAY "Invalid input"
+
+    ELSE IF litres <= 0 THEN
+        DISPLAY "Milk quantity must be positive"
+
+    ELSE
+        base_rate = 30.00
+
+        fat_adjustment = ((fat - 3.5) / 0.1) * 0.40
+        snf_adjustment = ((snf - 8.5) / 0.1) * 0.30
+
+        rate = base_rate + fat_adjustment + snf_adjustment
+        payment = litres * rate
+
+        DISPLAY farmer_id
+        DISPLAY rate
+        DISPLAY payment
+
+    END IF
+
+END
