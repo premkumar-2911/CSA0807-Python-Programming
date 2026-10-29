@@ -1,0 +1,18 @@
+# Task 8 — Algorithm
+
+**Milk Co-operative Payment Calculator**
+
+1. Start the program.
+2. Read the farmer ID.
+3. Read the quantity of milk in litres.
+4. Read the fat percentage and SNF percentage.
+5. Validate the farmer ID and numeric inputs.
+6. Check that the milk quantity is greater than zero and the entered values are within the permitted limits.
+7. Set the base rate to ₹30 per litre.
+8. Calculate the fat adjustment using ₹0.40 for every 0.1% deviation from 3.5% fat.
+9. Calculate the SNF adjustment using ₹0.30 for every 0.1% deviation from 8.5% SNF.
+10. Calculate the final rate per litre by adding both adjustments to the base rate.
+11. Calculate the total payment by multiplying the milk quantity by the final rate.
+12. Display the farmer ID, rate per litre, and total payment.
+13. If the input is invalid, display an appropriate error message.
+14. Stop the program.
