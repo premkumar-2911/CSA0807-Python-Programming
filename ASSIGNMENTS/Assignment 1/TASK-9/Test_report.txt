@@ -1,0 +1,25 @@
+# Task 9 — Implement and Test the Calculator
+
+## Objective
+Implement the milk payment calculator and test normal entries, boundary values and invalid inputs.
+
+## Test cases
+1. Standard fat and SNF values.
+2. Fat and SNF above the standard.
+3. Fat and SNF below the standard.
+4. Minimum allowed fat of 2.0%.
+5. Maximum allowed fat of 7.0%.
+6. Text entered instead of a number.
+7. Negative milk quantity.
+8. Fat below and above the allowed range.
+
+## Five-entry manual verification
+The calculated payments are ₹300.00, ₹283.90, ₹333.60, ₹138.50 and ₹226.10.
+
+Total payment = ₹1,282.10.
+
+## Alternative testing approach
+Manual testing requires the user to enter each case repeatedly. Automated tests using assert statements can rerun the same cases after each code change. For n test cases, the test suite takes O(n) time and uses O(1) additional space when cases are processed one at a time.
+
+## Conclusion
+The calculator uses named constants, reusable functions, input validation and Decimal arithmetic. Automated tests verify standard cases, boundary cases and invalid entries. The actual test output screenshot is included as evidence.
