@@ -1,0 +1,62 @@
+# Task 12 – Re-evaluate and Adapt the Design
+
+## A. Impact Analysis – 2 Marks
+
+The original calculator used a base rate of ₹30.00, a fat adjustment of ₹0.40 per 0.1% step, and an SNF adjustment of ₹0.30 per 0.1% step.
+
+The new requirements introduce automatic analyser readings with two decimal places, seasonal rates from April to June, and a ten-day volume bonus.
+
+The constants and functions affected are:
+
+- The base rate changes to ₹32.00 during April, May and June.
+- The fat adjustment changes to ₹0.45 per step during these months.
+- The SNF adjustment remains ₹0.30 per step.
+- A new bonus constant of ₹0.50 per litre is introduced.
+- A new function checks whether the farmer's ten-day supply exceeds 500 litres.
+
+Because readings can contain two decimal places, the step calculation uses `Decimal` and `ROUND_HALF_UP` to determine the nearest 0.1% step. This rounding policy should be confirmed with the co-operative.
+
+## B. Evaluation of the Original Design – 2 Marks
+
+The original named constants and calculation functions remain useful, but the original fixed-rate design is not sufficient for seasonal pricing.
+
+For example, for fat 4.20% and SNF 8.70%:
+
+Outside the seasonal period:
+
+Rate = ₹30.00 + 7 × ₹0.40 + 2 × ₹0.30 = ₹33.40 per litre.
+
+During April–June:
+
+Rate = ₹32.00 + 7 × ₹0.45 + 2 × ₹0.30 = ₹35.75 per litre.
+
+These examples show that the selected season must affect the rate calculation. The calculation must also support two-decimal analyser readings.
+
+## C. Adaptation or Redesign – 2 Marks
+
+I modified the design by introducing a function that selects the rate card based on the month. The calculator uses `Decimal` for financial values and calculates the fat and SNF adjustments separately.
+
+A ten-day payment function adds the litres supplied during the period. If the total exceeds 500 litres, it adds a bonus of ₹0.50 for every litre supplied during that ten-day period.
+
+The implementation was tested using two entries totalling 550 litres. The sample produced a total payment of ₹18,985.00, including the ₹275.00 bonus.
+
+## D. Evidence-Based Defence – 2 Marks
+
+The test results demonstrate that the modified design supports both seasonal and non-seasonal rate cards. For fat 4.20% and SNF 8.70%, the non-seasonal rate is ₹33.40 per litre, while the seasonal rate is ₹35.75 per litre.
+
+The ten-day test contains 300 litres and 250 litres, giving a combined total of 550 litres. Since 550 is greater than 500, the bonus is:
+
+550 × ₹0.50 = ₹275.00.
+
+The updated design is more flexible than a fixed-rate calculator because the rate card can change according to the month. The ten-day total is checked before deciding bonus eligibility.
+
+### Limitations
+
+- The program uses a manually selected month rather than a live date.
+- It processes sample entries and does not store a complete farmer history.
+- Production use would require persistent records, audit logs, access control and stronger error handling.
+- The nearest-step rule for two-decimal readings must be confirmed against the official analyser and co-operative policy.
+
+### Conclusion
+
+The original design should be modified rather than completely replaced. Named constants and separate functions remain useful, while seasonal rate selection and ten-day bonus calculation are added to meet the revised requirements. The test results support the updated design for the scenarios demonstrated.
