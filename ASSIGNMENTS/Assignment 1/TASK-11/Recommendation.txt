@@ -1,0 +1,54 @@
+# Task 11 – Recommend and Defend the Final Design
+
+## 1. Recommended Data Types
+
+I recommend using Python's `Decimal` type for financial calculations because decimal money values can be represented accurately when created from strings. The `float` type can introduce small binary floating-point errors.
+
+Litres and milk-quality values can also be represented using `Decimal` to maintain consistent precision.
+
+## 2. Recommended Rounding Rule
+
+The rate per litre should be calculated from the fat and SNF readings. Each payment should then be rounded to two decimal places using a defined rounding rule, such as `ROUND_HALF_UP`.
+
+For a ten-day payment, I recommend adding the individually rounded payments for that farmer. The co-operative should confirm this policy against its official accounting and bank-settlement rules.
+
+## 3. Rate Revision Process
+
+The rate values are stored in `task11_ratecard.json` instead of being hard-coded throughout the Python program.
+
+When the co-operative changes its base rate or adjustment values, an authorised person can update the rate-card file without editing the calculation functions. The program should validate the file before processing payments, and every revision should be documented and approved.
+
+## 4. Limitations
+
+- The demonstration processes a sample entry rather than maintaining complete farmer records.
+- It does not include a database, user authentication, backups or an audit trail.
+- Invalid rate-card contents need additional error handling in a production system.
+- The current rate card represents the original assignment requirements and does not yet implement seasonal rates or volume bonuses.
+
+## 5. District-Union Scalability
+
+The calculation can process 150,000 payments using a loop. Processing n payments takes O(n) time. If payments are accumulated without storing every entry, the calculation needs O(1) additional working space, excluding the input data.
+
+A real district-union system would also need a database, reliable record storage, duplicate-entry prevention, access control, backups and transaction reports. Performance should be measured with realistic data before deployment.
+
+## 6. Alternative: Load a JSON Rate Card
+
+If the rate card contains t values, reading and validating the file takes O(t) time, and storing those values takes O(t) space. For a small rate card, this overhead is generally small, but the actual startup time should be measured.
+
+Keeping rates in a separate file makes revisions easier than editing and redistributing the Python program for every change. However, the file must be protected from unauthorised modification and validated when loaded.
+
+## 7. Evidence from Task 10
+
+My measured results were:
+
+- Float and Decimal totals for 300 payments: [insert measured results].
+- Float and Decimal totals for 6,000 payments: [insert measured results].
+- Float and Decimal totals for 150,000 payments: [insert measured results].
+- Measured calculation times: [insert actual timings].
+- Rounding comparison: [insert the observed result].
+
+These measurements should be used to justify the final choice of `Decimal` and to discuss the speed-versus-accuracy trade-off.
+
+## Conclusion
+
+I recommend `Decimal` for money calculations, a documented rounding rule, named calculation functions and a separately stored JSON rate card. This design is easier to maintain and can support larger workloads, provided that production-level storage, validation, security and accounting controls are added.
