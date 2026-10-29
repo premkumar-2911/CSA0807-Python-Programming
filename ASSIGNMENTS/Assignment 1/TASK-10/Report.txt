@@ -1,0 +1,19 @@
+# Task 10 – Compare Expectations with Execution
+
+## Objective
+To compare floating-point and decimal arithmetic, measure execution time for different numbers of payments, study rounding behaviour, and evaluate rate caching.
+
+## Observations
+1. The `float` type uses binary floating-point representation, so some decimal values cannot be represented exactly.
+2. The `Decimal` type, when constructed from strings, represents decimal payment values accurately.
+3. `time.perf_counter()` measures elapsed execution time for 300, 6,000 and 150,000 payments.
+4. Rounding each individual payment to two decimal places before adding can produce a different total from rounding the unrounded total. The correct method depends on the co-operative's defined payment and bank-settlement rules.
+5. A dictionary rate cache avoids repeated rate calculations for previously encountered fat and SNF pairs. It requires extra memory for the distinct pairs stored.
+
+## Complexity Analysis
+- Summing n payments: O(n) time.
+- Accumulating the total without storing all payments: O(1) extra space, excluding the input data.
+- Using a rate cache: average O(1) dictionary lookup per entry, with O(k) extra space for k distinct fat and SNF pairs.
+
+## Conclusion
+Decimal arithmetic is preferable for financial calculations requiring exact decimal amounts. Actual execution times and total differences should be recorded from the program output. Rate caching is useful when many entries reuse the same fat and SNF combinations, but its performance benefit must be verified by measurement.
