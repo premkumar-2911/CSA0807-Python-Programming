@@ -1,0 +1,26 @@
+# TASK 7 – PYTHON MODULE
+
+## Objective
+To separate the milk-rate calculation into a reusable Python module.
+
+## Module Used
+The file `milkrate.py` contains named constants and two functions:
+- `calculate_rate()` calculates the rate per litre using fat and SNF adjustments.
+- `calculate_payment()` calculates the total payment.
+
+The file `task07_main.py` imports the module using `import milkrate` and calls its functions.
+
+## Advantages
+1. Improves code organization.
+2. Makes functions reusable.
+3. Simplifies maintenance.
+4. Makes testing individual components easier.
+5. Separates calculation logic from user interaction.
+
+## Sample Result
+For 10 litres with 3.7% fat and 8.6% SNF:
+- Rate per litre = ₹31.10
+- Total payment = ₹311.00
+
+## Conclusion
+Using a separate module makes the milk payment calculator more modular, reusable, and easier to maintain.
